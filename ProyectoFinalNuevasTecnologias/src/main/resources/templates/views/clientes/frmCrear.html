@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="plantilla/template :: head">
+</head>
+<body>
+	<header th:replace="plantilla/template :: header"></header>
+<br>
+	<div class="container">
+	
+	<div class="card border-primary mb-3">
+		<div class="card-header bg-dark text-white" th:text="${titulo}"></div>
+		<div class="card-body">
+	
+		<form th:action="@{/views/clientes/save}" th:object="${clientes}" method="post">
+				<div class="form-group row">
+
+							<label class="col-md-2" for="cedulaCliente">Cédula del Cliente</label>
+							<input type="number" th:field="*{cedulaCliente}"  class="form-control form-control-sm col-md-6"
+								id="cedulaCliente" placeholder="Cédula del cliente">
+						</div>
+
+						<div class="form-group row">
+							<label class="col-md-2" for="direccionCliente">Dirección del Cliente</label>
+							<input type="text" th:field="*{direccionCliente}"
+								class="form-control form-control-sm col-md-6" id="direccionCliente"
+								placeholder="Dirección del cliente">
+
+						</div>
+
+						<div class="form-group row">
+							<label class="col-md-2" for="emailCliente">Email del Cliente</label>
+							<input type="email" th:field="*{emailCliente}"
+								class="form-control form-control-sm col-md-6" id="emailCliente"
+								placeholder="Email del cliente">
+
+						</div>
+
+						<div class="form-group row">
+							<label class="col-md-2" for="nombreCliente">Nombre del Cliente</label>
+							<input type="text" th:field="*{nombreCliente}"
+								class="form-control form-control-sm col-md-6" id="nombreCliente"
+								placeholder="Nombre del cliente">
+
+						</div>
+
+						<div class="form-group row">
+							<label class="col-md-2" for="telefonoCliente">Teléfono del Cliente</label>
+							<input type="number" th:field="*{telefonoCliente}"
+								class="form-control form-control-sm col-md-6" id="telefonoCliente"
+								placeholder="Teléfono del cliente">
+
+						</div>
+			<br>
+			<div class="d-flex justify-content-center">
+				<input type="submit" class="btn btn-primary btn-sm" value="Guardar">
+			</div>
+			
+		</form>
+		</div>
+	</div>
+
+	</div>
+
+	<footer th:replace="plantilla/template :: footer"></footer>
+
+</body>
+</html>

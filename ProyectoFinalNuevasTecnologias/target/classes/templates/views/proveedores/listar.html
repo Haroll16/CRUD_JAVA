@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="plantilla/template :: head">
+</head>
+<body>
+	<header th:replace="plantilla/template :: header"></header>
+<br>
+	<div class="container">		
+		<h1 th:text="${titulo}"></h1>		
+	</div>
+	
+	<div class="container">
+		
+		<a class="btn btn-primary btn-sm" th:href="@{/views/proveedores/create}"
+			th:text="'Nuevo Proveedor'" title="Crear Nuevo Registro">
+		</a>
+
+	
+		<table class="table">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col">Nit del proveedor</th>
+					<th scope="col">Ciudad del proveedor</th>
+					<th scope="col">Dirección del proveedor</th>
+					<th scope="col">Nombre del proveedor</th>
+					<th scope="col">Teléfono del proveedor </th>
+					<th scope="col">Editar</th>
+					<th scope="col">Eliminar</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="cl:${Proveedor}">
+					<th scope="row" th:text="${cl.nitProveedor}"></th>
+					<td th:text="${cl.ciudadProveedor}"></td>
+					<td th:text="${cl.direccionProveedor}"></td>
+					<td th:text="${cl.nombreProveedor}"></td>
+					<td th:text="${cl.telefonoProveedor}"></td>
+					<td>
+						<a class="btn btn-success btn-sm" th:href="@{/views/proveedores/edit/} + ${cl.nitProveedor}"
+							th:text="'Editar'" title="Editar Registro">
+						</a>
+					</td>	
+					<td>
+						<a class="btn btn-danger btn-sm" th:href="@{/views/proveedores/delete/} + ${cl.nitProveedor}"
+							th:text="'Eliminar'" title="Eliminar Registro"
+							onclick="return confirm('Esta seguro de eliminar el registro?');">
+						</a>
+					</td>					
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+
+	<footer th:replace="plantilla/template :: footer"></footer>
+
+</body>
+</html>

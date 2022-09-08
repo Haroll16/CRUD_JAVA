@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="plantilla/template :: head">
+</head>
+
+<body>
+	<header th:replace="plantilla/template :: header"></header>
+<br>
+	<div class="container">
+
+		<div class="card border-primary mb-3" >
+			<div class="card-header bg-dark text-white" th:text="${titulo}"></div>
+			<div class="card-body">
+
+				<div class="container">
+					<form th:action="@{/views/proveedores/save}" th:object="${proveedor}" method="post">
+						<div class="form-group row">
+
+							<label class="col-md-2" for="nitProveedor">Nit del proveedor</label>
+							<input type="number" th:field="*{nitProveedor}" class="form-control form-control-sm col-md-6"
+								id="nitProveedor" placeholder="Nit del proveedor">
+						</div>
+
+						<div class="form-group row">
+							<label class="col-md-2" for="ciudadProveedor">Ciudad proveedor</label>
+							<input type="text" th:field="*{ciudadProveedor}"
+								class="form-control form-control-sm col-md-6" id="ciudadProveedor"
+								placeholder="Ciudad del proveedor">
+
+						</div>
+
+						<div class="form-group row">
+							<label class="col-md-2" for="direccionProveedor">Dirección proveedor</label>
+							<input type="text" th:field="*{direccionProveedor}"
+								class="form-control form-control-sm col-md-6" id="direccionProveedor"
+								placeholder="Dirección del proveedor">
+
+						</div>
+
+						<div class="form-group row">
+							<label class="col-md-2" for="nombreProveedor">Nombre proveedor</label>
+							<input type="text" th:field="*{nombreProveedor}"
+								class="form-control form-control-sm col-md-6" id="nombreProveedor"
+								placeholder="Nombre del proveedor">
+
+						</div>
+
+						<div class="form-group row">
+							<label class="col-md-2" for="telefonoProveedor">Teléfono proveedor</label>
+							<input type="number" th:field="*{telefonoProveedor}"
+								class="form-control form-control-sm col-md-6" id="telefonoProveedor"
+								placeholder="Teléfono del proveedor">
+
+						</div>
+
+						<br>
+			<div class="d-flex justify-content-center">
+				<input type="submit" class="btn btn-primary btn-sm" value="Guardar">
+			</div>
+					</form >
+				</div>
+			</div>
+
+		</div>
+
+
+
+		<footer th:replace="plantilla/template :: footer"></footer>
+
+</body>
+
+</html>

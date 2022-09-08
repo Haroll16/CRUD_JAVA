@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="plantilla/template :: head">
+</head>
+<body>
+	<header th:replace="plantilla/template :: header"></header>
+<br>
+	<div class="container">		
+		<h1 th:text="${titulo}"></h1>		
+	</div>
+	
+	<div class="container">
+		
+		<a class="btn btn-primary btn-sm" th:href="@{/views/clientes/create}"
+			th:text="'Nuevo Cliente'" title="Crear Nuevo Registro">
+		</a>
+		
+		<table class="table">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col">Cedula del cliente</th>
+					<th scope="col">Dirección del Cliente</th>
+					<th scope="col">Email del Cliente</th>
+					<th scope="col">Nombre del Cliente</th>
+					<th scope="col">Teléfono del Cliente</th>
+					
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="cl:${clientes}">
+					<th scope="row" th:text="${cl.cedulaCliente}"></th>
+					<td th:text="${cl.direccionCliente}"></td>
+					<td th:text="${cl.emailCliente}"></td>
+					<td th:text="${cl.nombreCliente}"></td>
+					<td th:text="${cl.telefonoCliente}"></td>
+					<td>
+						<a class="btn btn-success btn-sm" th:href="@{/views/clientes/edit/} + ${cl.cedulaCliente}"
+							th:text="'Editar'" title="Editar Registro">
+						</a>
+					</td>	
+					<td>
+						<a class="btn btn-danger btn-sm" th:href="@{/views/clientes/delete/} + ${cl.cedulaCliente}"
+							th:text="'Eliminar'" title="Eliminar Registro"
+							onclick="alert('Esta seguro de eliminar el registro?');">
+						</a>
+					</td>					
+				</tr>
+			</tbody>
+		</table>
+
+
+	</div>
+
+	<footer th:replace="plantilla/template :: footer"></footer>
+
+</body>
+</html>

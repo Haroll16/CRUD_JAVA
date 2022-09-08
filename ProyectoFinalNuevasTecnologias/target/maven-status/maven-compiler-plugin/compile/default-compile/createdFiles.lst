@@ -1,0 +1,17 @@
+konrad\edu\co\nuevas_tecnologias_20212\service\IVentasService.class
+konrad\edu\co\nuevas_tecnologias_20212\repository\ClienteRepository.class
+konrad\edu\co\nuevas_tecnologias_20212\repository\ProveedorRepository.class
+konrad\edu\co\nuevas_tecnologias_20212\controller\HomeController.class
+konrad\edu\co\nuevas_tecnologias_20212\service\VentasServiceImpl.class
+konrad\edu\co\nuevas_tecnologias_20212\service\ProveedorServiceImpl.class
+konrad\edu\co\nuevas_tecnologias_20212\controller\ProveedorController.class
+konrad\edu\co\nuevas_tecnologias_20212\repository\VentasRepository.class
+konrad\edu\co\nuevas_tecnologias_20212\service\IClienteService.class
+konrad\edu\co\nuevas_tecnologias_20212\controller\ClienteController.class
+konrad\edu\co\nuevas_tecnologias_20212\controller\VentasController.class
+konrad\edu\co\nuevas_tecnologias_20212\entity\Proveedor.class
+konrad\edu\co\nuevas_tecnologias_20212\entity\Ventas.class
+konrad\edu\co\nuevas_tecnologias_20212\service\IProveedorService.class
+konrad\edu\co\nuevas_tecnologias_20212\NuevasTecnoloigas20212Application.class
+konrad\edu\co\nuevas_tecnologias_20212\entity\Cliente.class
+konrad\edu\co\nuevas_tecnologias_20212\service\ClienteServiceImpl.class
